@@ -1,4 +1,3 @@
-import Profile from './components/Profile';
 import { GlobalStyle } from './GlobalStyle';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Home from './pages';
