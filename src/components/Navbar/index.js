@@ -14,6 +14,8 @@ import {
 
 import { FaBars } from 'react-icons/fa';
 
+import logo from '../../images/logo.png';
+
 const Navbar = ({ toggle }) => {
   return (
     <>
@@ -27,7 +29,7 @@ const Navbar = ({ toggle }) => {
             exact={true}
             offset={-80}
           >
-            RC
+            <img src={logo} alt='my-logo' />
           </NavLogo>
           <Hamburger onClick={toggle}>
             <FaBars />

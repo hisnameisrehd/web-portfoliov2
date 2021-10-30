@@ -15,14 +15,14 @@ export const projectOne = {
 export const projectTwo = {
   id: '2',
   imgStart: 'finish',
-  title: 'Stock Market Tracker',
-  imgUrl: require('../../images/stock.jpg').default,
+  title: 'Cryptocurrency Tracker',
+  imgUrl: require('../../images/crypto.png').default,
   description:
-    'A React project that I made that tracks the price of the stock. This project can also search for a stock that they want and an option to add them to their Saved Stocks. This project aims to ensure that my comfortability of using React is set to high.',
-  tags: 'React JavaScript HTML Bootstrap API',
-  siteUrl: 'https://github.com/hisnameisrehd/stock-market-tracker',
+    'A React project I made that tracks the price of the crypto coins. This project can also search for a coin that they want and has a feature of a Load More button. This project aims to ensure that my comfortability of using React is set to high.',
+  tags: 'React JSX CSS HTML Axios Coingecko',
+  siteUrl: 'https://github.com/hisnameisrehd/react-crypto-tracker',
   hasButton: true,
-  githubLink: 'https://github.com/hisnameisrehd/stock-market-tracker',
+  githubLink: 'https://github.com/hisnameisrehd/react-crypto-tracker',
   hasWebsite: 'none',
 };
 

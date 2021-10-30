@@ -65,12 +65,14 @@ export const Content = styled.div`
     border: none;
     border-bottom: 1px solid #bfbfbf;
     width: 150%;
+    color: #fff;
 
     @media screen and (min-width: 720px) {
       width: 200%;
     }
 
-    :active {
+    :focus-visible {
+      background: transparent;
       border: none;
     }
   }
