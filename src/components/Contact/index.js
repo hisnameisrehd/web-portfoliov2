@@ -1,10 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 
 import { Container } from '../General/Container.styles';
 import { Content } from './Contact.styles';
 import { Text } from '../General/Text.styles';
 import { Button } from '../General/Button.styles';
+
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const form = useRef();
@@ -32,9 +35,38 @@ const Contact = () => {
     e.target.reset();
   };
 
+  const contentVariants = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 1,
+      },
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
   return (
     <Container>
-      <Content id='contact'>
+      <Content
+        id='contact'
+        ref={ref}
+        initial='hidden'
+        animate={controls}
+        variants={contentVariants}
+      >
         <Text>
           <div className='modal' style={{ display: isModalOpen }}>
             Success!

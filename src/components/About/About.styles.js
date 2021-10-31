@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   height: 100vh;
   display: flex;
   flex-direction: column;

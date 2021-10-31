@@ -29,7 +29,23 @@ const Profile = () => {
         <ProfileBg>
           <VideoBg autoPlay loop muted src={Video} />
         </ProfileBg>
-        <Content>
+        <Content
+          initial={{
+            opacity: 0.1,
+            duration: 2,
+            x: 2000,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            stiffness: 60,
+            type: 'spring',
+            delay: 1,
+            damping: 5,
+          }}
+        >
           <Greetings>
             <span>Hi there! My name is</span>
           </Greetings>
@@ -65,7 +81,31 @@ const Profile = () => {
         </Content>
 
         <Content>
-          <ProfileBorder>
+          <ProfileBorder
+            id='home'
+            drag
+            dragConstraints={{
+              right: 20,
+              left: 20,
+              bottom: 20,
+              top: 20,
+            }}
+            initial={{
+              opacity: 0.1,
+              duration: 0.5,
+              y: 1000,
+            }}
+            animate={{
+              opacity: 1,
+              rotate: 360,
+              y: 0,
+            }}
+            transition={{
+              delay: 1.5,
+              type: 'spring',
+              stiffness: 20,
+            }}
+          >
             <ProfilePhoto></ProfilePhoto>
           </ProfileBorder>
         </Content>

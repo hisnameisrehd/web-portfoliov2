@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { animateScroll as scroll } from 'react-scroll';
 
 import {
   Nav,
@@ -17,11 +19,45 @@ import { FaBars } from 'react-icons/fa';
 import logo from '../../images/logo.png';
 
 const Navbar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav);
+  }, []);
+
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
-      <Nav>
+      <Nav
+        scrollNav={scrollNav}
+        initial={{
+          opacity: 0.1,
+          duration: 2,
+          y: 2000,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          stiffness: 100,
+          type: 'spring',
+        }}
+      >
         <NavbarContainer>
           <NavLogo
+            onClick={toggleHome}
             to='home'
             smooth={true}
             duration={true}

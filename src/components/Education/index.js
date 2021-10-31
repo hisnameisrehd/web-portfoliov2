@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from '../General/Container.styles';
 import { Content } from './Education.styles';
 import { Text } from '../General/Text.styles';
 import { RiArrowRightSLine } from 'react-icons/ri';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Education = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -11,10 +13,38 @@ const Education = () => {
     setToggleState(index);
   };
 
+  const contentVariants = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 0.3,
+      },
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
   return (
     <Container id='education'>
       <Text>
-        <Content>
+        <Content
+          ref={ref}
+          initial='hidden'
+          animate={controls}
+          variants={contentVariants}
+        >
           <h1>education</h1>
           <div className='tablist'>
             <div className='block-tabs'>

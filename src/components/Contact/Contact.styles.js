@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-export const Content = styled.div`
+import { motion } from 'framer-motion';
+export const Content = styled(motion.div)`
   height: 100vh;
   padding: 200px 0;
 

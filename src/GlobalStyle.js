@@ -85,6 +85,8 @@ body{
         font-size: 1rem;
     }
 
+    overflow-x: hidden;
+
     
 }
 

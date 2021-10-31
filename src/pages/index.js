@@ -23,7 +23,6 @@ const Home = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <>
       {loading ? (

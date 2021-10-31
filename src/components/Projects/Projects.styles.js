@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const List = styled.li`
   position: relative;
@@ -31,7 +32,7 @@ export const List = styled.li`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   .display {
     display: block;
   }

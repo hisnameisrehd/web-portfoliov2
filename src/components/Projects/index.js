@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Tags, Content, List } from '../Projects/Projects.styles';
 import { Button } from '../General/Button.styles';
 import { FiGithub } from 'react-icons/fi';
 import { CgWebsite } from 'react-icons/cg';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Projects = ({
   id,
@@ -18,9 +20,37 @@ const Projects = ({
   hasGit,
   hasWebsite,
 }) => {
+  const contentVariants = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 0.3,
+      },
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
   return (
     <List id={id}>
-      <Content className={imgStart}>
+      <Content
+        className={imgStart}
+        ref={ref}
+        initial='hidden'
+        animate={controls}
+        variants={contentVariants}
+      >
         <div className='project-image'>
           <img src={imgUrl} alt={alt} />
         </div>

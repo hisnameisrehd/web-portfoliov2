@@ -1,15 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '../General/Container.styles';
-import { Button } from '../General/Button.styles';
 import { IoMdArrowDroprightCircle } from 'react-icons/io';
 import { Content, HireButton } from './About.styles';
 import { Text } from '../General/Text.styles';
+import { useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
+  const contentVariants = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 0.3,
+      },
+    },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
   return (
     <Container id='about'>
       <Text>
-        <Content>
+        <Content
+          className='About'
+          ref={ref}
+          initial='hidden'
+          animate={controls}
+          variants={contentVariants}
+        >
           <h1>about</h1>
           <p>
             Hi! My name is Rehd.{' '}

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 // image
 import img from '../../images/me.jpg';
@@ -49,7 +50,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +142,7 @@ export const Capabilities = styled.div`
   }
 `;
 
-export const ProfileBorder = styled.div`
+export const ProfileBorder = styled(motion.div)`
   display: flex;
   justify-content: center;
   box-shadow: 0 1px 0 0 #fff;

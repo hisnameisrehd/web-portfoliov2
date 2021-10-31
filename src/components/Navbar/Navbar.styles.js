@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 import { Link as LinkS } from 'react-scroll';
 
-export const Nav = styled.nav`
-  background: #0a192f;
+import { motion } from 'framer-motion';
+
+export const Nav = styled(motion.nav)`
+  background: ${({ scrollNav }) => (scrollNav ? '#0a192f' : 'transparent')};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -100,7 +102,8 @@ export const NavLinks = styled(LinkS)`
   font-family: 'Encode Sans Expanded', sans-serif;
   font-size: 14px;
 
-  &.active {
+  &.active,
+  :hover {
     border-bottom: 3px solid var(--blue);
   }
 `;

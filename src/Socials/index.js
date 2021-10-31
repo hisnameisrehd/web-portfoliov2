@@ -9,10 +9,26 @@ import {
   BsGithub,
 } from 'react-icons/bs';
 
+import { motion } from 'framer-motion';
+
 const Socials = () => {
   return (
     <>
-      <ul className='socials'>
+      <motion.ul
+        className='socials'
+        initial={{
+          opacity: 0.1,
+          duration: 1.5,
+          x: -200,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
+        transition={{
+          delay: 3,
+        }}
+      >
         <li>
           <a
             href='https://www.facebook.com/hisnameisrehd/'
@@ -67,7 +83,7 @@ const Socials = () => {
             <BsTwitch />
           </a>
         </li>
-      </ul>
+      </motion.ul>
     </>
   );
 };

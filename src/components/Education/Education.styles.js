@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,6 +28,11 @@ export const Content = styled.div`
 
   .block-tabs {
     display: flex;
+    overflow-x: scroll;
+
+    @media screen and (min-width: 290px) {
+      overflow-x: hidden;
+    }
 
     @media screen and (min-width: 720px) {
       flex-direction: column;
