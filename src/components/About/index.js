@@ -42,21 +42,34 @@ const About = () => {
         >
           <h1>about</h1>
           <p>
-            Hi! My name is Rehd.{' '}
-            <span>I love developing things at the front-end</span>. I started
-            loving this hobby back in 2013 when Facebook introduced welcome page
-            on a certain Facebook page. That's where I started coding basic HTML
-            and CSS.
+            Hi! I'm Rehd. My journey into tech started back in 2013 when I first
+            began tinkering with custom{' '}
+            <span>HTML & CSS on Facebook pages</span>. What began as a childhood
+            curiosity evolved into a full-fledged career in tech—earning my{' '}
+            <span>
+              Diploma in Digital Media & Information Technology (Top Academic
+              Performer at NAIT)
+            </span>{' '}
+            and building enterprise-grade applications.
           </p>
           <p>
-            Moving forward today, since I'm a fresh graduate, my objective is to
-            be a <span>competitive developer</span> and expand my knowledge and
-            experience on React, WordPress and Laravel
-          </p>
-          <p>
-            I know I just finished graduating last summer in 2021, but{' '}
-            <span>I am confident that I can bring growth on a company</span>{' '}
-            that will hire me
+            Today, I'm a{' '}
+            <span>
+              Configuration Analyst / Front-End Developer with nearly 5 years of
+              experience building, deploying, and maintaining complex digital
+              products.
+            </span>{' '}
+            Most recently at Forward Insurance Managers Ltd., I was a key
+            technical contributor on the team that{' '}
+            <span>
+              built and deployed the company's core digital insurance portal
+              from the ground up
+            </span>
+            —configuring user interfaces (JavaScript, HTML, CSS), integrating
+            REST APIs (Swagger UI), and building custom SQL data pipelines. I
+            thrive at the intersection of clean front-end UI, API integrations,
+            and practical problem-solving. Outside of coding, you'll usually
+            find me playing guitar and singing along to it.
           </p>
 
           <div>
@@ -66,24 +79,30 @@ const About = () => {
             <ul>
               <li>
                 <IoMdArrowDroprightCircle />{' '}
-                <p className='tags'>HTML &amp; CSS</p>
+                <p className='tags'>
+                  <span>Front-End:</span> JavaScript, HTML5, CSS3/SASS, React.js
+                </p>
               </li>
               <li>
                 <IoMdArrowDroprightCircle />{' '}
-                <p className='tags'>JavaScript (ES6+)</p>
-              </li>
-              <li>
-                <IoMdArrowDroprightCircle /> <p className='tags'>React.js</p>
-              </li>
-              <li>
-                <IoMdArrowDroprightCircle /> <p className='tags'>WordPress</p>
+                <p className='tags'>
+                  <span>Back-End &amp; DB: </span>REST APIs, Microsoft SQL
+                  (T-SQL), PHP & Laravel
+                </p>
               </li>
               <li>
                 <IoMdArrowDroprightCircle />{' '}
-                <p className='tags'>Laravel (PHP)</p>
+                <p className='tags'>
+                  <span>Tools: </span>Git / GitHub, Jira (Agile), MGA Platform,
+                  WordPress
+                </p>
               </li>
               <li>
-                <IoMdArrowDroprightCircle /> <p className='tags'>Photography</p>
+                <IoMdArrowDroprightCircle />{' '}
+                <p className='tags'>
+                  <span>Hobby: </span>Music Production, Photography, Video
+                  Editing
+                </p>
               </li>
             </ul>
           </div>

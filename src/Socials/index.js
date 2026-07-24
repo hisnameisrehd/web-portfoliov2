@@ -31,15 +31,6 @@ const Socials = () => {
       >
         <li>
           <a
-            href='https://www.facebook.com/hisnameisrehd/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <BsFacebook />
-          </a>
-        </li>
-        <li>
-          <a
             href='https://github.com/hisnameisrehd'
             target='_blank'
             rel='noopener noreferrer'
@@ -54,33 +45,6 @@ const Socials = () => {
             rel='noopener noreferrer'
           >
             <BsLinkedin />
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://twitter.com/HisNameIsRehd'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <BsTwitter />
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://twitter.com/HisNameIsRehd'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <BsInstagram />
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://www.twitch.tv/itwixvalorant'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <BsTwitch />
           </a>
         </li>
       </motion.ul>
