@@ -27,14 +27,21 @@ const Contact = () => {
     const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
+    console.log('Service ID:', process.env.REACT_APP_EMAILJS_SERVICE_ID);
+    console.log('Template ID:', process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+    console.log('Public Key:', process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+        publicKey: PUBLIC_KEY,
+      })
       .then(
         (result) => {
           setStatusMessage('Message has been sent. Talk soon!');
           form.current.reset();
         },
         (error) => {
+          console.error('EmailJS error', error);
           setStatusMessage('Failed. Please try again.');
         },
       )
