@@ -36,7 +36,7 @@ const Contact = () => {
         },
         (error) => {
           setStatusMessage('Failed. Please try again.');
-        }
+        },
       )
       .finally(() => {
         setIsSubmitting(false);
