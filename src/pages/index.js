@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import About from '../components/About';
+import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Navbar from '../components/Navbar';
 import Profile from '../components/Profile';
@@ -33,6 +34,7 @@ const Home = () => {
           <Navbar toggle={toggle} />
           <Profile />
           <About />
+          <Experience />
           <Education />
           <BeforeProjectContent />
           <Contact />

@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import emailjs from 'emailjs-com';
+
+//email-js
+import emailjs from '@emailjs/browser';
 
 import { Container } from '../General/Container.styles';
 import { Content } from './Contact.styles';
@@ -12,27 +14,33 @@ import { useInView } from 'react-intersection-observer';
 const Contact = () => {
   const form = useRef();
   const [isModalOpen, setisModalOpen] = useState('none');
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    setIsSubmitting(true);
+    setStatusMessage('');
+
+    const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
     emailjs
-      .sendForm(
-        'service_hftbhik',
-        'template_fiirmt5',
-        form.current,
-        'user_PvK3M1xf0C5PPT4DzG6TS'
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then(
         (result) => {
-          console.log(result.text);
+          setStatusMessage('Message has been sent. Talk soon!');
+          form.current.reset();
         },
         (error) => {
-          console.log(error.text);
+          setStatusMessage('Failed. Please try again.');
         }
-      );
-    setisModalOpen('block');
-    e.target.reset();
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const contentVariants = {
@@ -72,21 +80,36 @@ const Contact = () => {
             Success!
           </div>
           <form ref={form} onSubmit={sendEmail}>
-            <h1>Hey, feel free to drop a message here!</h1>
+            <h1>Drop message for inquiries</h1>
             <div>
               <p>
-                I'm currently looking for a company that can make me a better
-                developer particularly in React! I am confident that I can bring
-                a growth on a company that will hire me.
+                I'm always open to new opportunities where I can solve
+                challenging problems, contribute to impactful products, and
+                continue growing alongside a talented team. If you're looking
+                for a developer who brings strong technical skills and a
+                dedication to quality, let's connect!
               </p>
             </div>
+            {/* Display status message when form is sent/fails */}
+            {statusMessage && (
+              <p
+                style={{
+                  color: statusMessage.includes('Failed')
+                    ? '#ff4d4d'
+                    : '#00fffb',
+                  marginTop: '10px',
+                }}
+              >
+                {statusMessage}
+              </p>
+            )}
             <div>
               <label>Name</label>
-              <input type='text' name='name' required />
+              <input type='text' name='user_name' required />
             </div>
             <div>
               <label>Email</label>
-              <input type='email' name='email' required />
+              <input type='email' name='user_email' required />
             </div>
             <div>
               <label>Message</label>
