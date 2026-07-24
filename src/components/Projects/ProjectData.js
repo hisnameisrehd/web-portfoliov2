@@ -23,7 +23,7 @@ export const projectTwo = {
   siteUrl: 'https://hisnameisrehd.github.io/react-crypto-tracker/',
   hasButton: true,
   githubLink: 'https://github.com/hisnameisrehd/react-crypto-tracker',
-  hasWebsite: 'none',
+  hasWebsite: true,
 };
 
 export const projectThree = {
