@@ -25,18 +25,3 @@ A modern, responsive personal portfolio built with **React**, **Styled Component
 - **Deployment:** GitHub Pages (`gh-pages`)
 
 ---
-
-## 🚀 Getting Started Locally
-
-To run this project locally on your machine, follow these steps:
-
-### Prerequisites
-
-Make sure you have Node.js and npm installed.
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/hisnameisrehd/web-portfoliov2.git](https://github.com/hisnameisrehd/web-portfoliov2.git)
-   cd web-portfoliov2
