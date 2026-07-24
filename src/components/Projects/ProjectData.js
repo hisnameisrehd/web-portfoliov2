@@ -20,7 +20,7 @@ export const projectTwo = {
   description:
     'A React project I made that tracks the price of the crypto coins. This project can also search for a coin that they want and has a feature of a Load More button. This project aims to ensure that my comfortability of using React is set to high.',
   tags: 'React JSX CSS HTML Axios Coingecko',
-  siteUrl: 'https://github.com/hisnameisrehd/react-crypto-tracker',
+  siteUrl: 'https://hisnameisrehd.github.io/react-crypto-tracker/',
   hasButton: true,
   githubLink: 'https://github.com/hisnameisrehd/react-crypto-tracker',
   hasWebsite: 'none',
