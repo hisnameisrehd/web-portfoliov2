@@ -36,7 +36,7 @@ export const Content = styled(motion.div)`
   }
 
   li {
-    flex-basis: 34%;
+    flex-basis: 50%;
     display: flex;
     align-items: center;
 

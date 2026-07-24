@@ -57,15 +57,15 @@ const Profile = () => {
               <Typical
                 loop={Infinity}
                 steps={[
-                  'Front-end Developer...',
+                  'Software Developer...',
                   1000,
-                  'React Developer...',
+                  'Currenly a Configuration Analyst...',
                   1000,
-                  'PHP / Laravel Developer...',
+                  'Former PHP / Laravel Developer...',
                   1000,
-                  'WordPress Developer...',
+                  'Former WordPress Developer...',
                   1000,
-                  'Photographer...',
+                  'Former Photographer...',
                   1000,
                 ]}
               />

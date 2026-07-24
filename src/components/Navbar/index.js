@@ -16,7 +16,7 @@ import {
 
 import { FaBars } from 'react-icons/fa';
 
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -121,7 +121,7 @@ const Navbar = ({ toggle }) => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <a href='Resume-Rehd.pdf' download='Rehd Colipano.pdf'>
+            <a href='Resume - Rehd Colipano.pdf' download='Rehd Colipano.pdf'>
               <NavBtnLink>Resume</NavBtnLink>
             </a>
           </NavBtn>
